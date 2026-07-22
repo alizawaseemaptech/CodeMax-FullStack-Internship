@@ -1,22 +1,28 @@
-# Day 02 – HTML
+# Simple Blog Management System
 
-## Objective
+## Day 2 - HTML
 
-Create the basic structure of the Simple Blog Management System using HTML.
+- Home Page
+- Add Blog Page
+- Navigation Bar
+- Footer
 
-## Tasks Completed
+## Day 3 - CSS
 
-- Created Home Page
-- Created Add Blog Page
-- Added Navigation Bar
-- Added Footer
-- Used semantic HTML elements
+- Styled Header
+- Professional Navigation Bar
+- Blog Cards Design
+- Styled Form
+- Styled Buttons
+- Responsive Layout
+- Professional Footer
 
-## Files
+## Technologies Used
 
-- index.html
-- add-blog.html
+- HTML5
+- CSS3
 
 ## Status
 
-✅ Day 02 Completed Successfully
+✅ Day 2 Completed
+✅ Day 3 Completed

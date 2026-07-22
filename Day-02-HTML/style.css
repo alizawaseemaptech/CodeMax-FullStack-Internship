@@ -1,0 +1,185 @@
+/* ===== Global Styles ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===== Header ===== */
+
+header {
+    background-color: #0f172a;
+    color: white;
+    padding: 20px 60px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    font-size: 30px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #38bdf8;
+}
+
+/* ===== Main ===== */
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+/* ===== Welcome Section ===== */
+
+section:first-child {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+section:first-child h1 {
+    font-size: 38px;
+    color: #0f172a;
+    margin-bottom: 15px;
+}
+
+section:first-child p {
+    color: #666;
+    font-size: 18px;
+}
+
+/* ===== Blog Cards ===== */
+
+article {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+article h3 {
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+article:hover {
+    transform: translateY(-5px);
+    transition: .3s;
+}
+
+/* ===== Form ===== */
+
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* ===== Button ===== */
+
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: .3s;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+/* ===== Footer ===== */
+
+footer {
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width:768px){
+
+    header{
+        padding:20px;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    nav ul li{
+        margin:10px 0;
+    }
+
+    section:first-child h1{
+        font-size:30px;
+    }
+
+    main{
+        width:95%;
+    }
+
+}
