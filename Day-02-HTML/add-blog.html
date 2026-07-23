@@ -25,16 +25,31 @@
         <section>
             <h1>Add New Blog</h1>
 
-            <form>
+            <form id="blogForm">
 
                 <label for="title">Blog Title</label>
-                <input type="text" id="title" placeholder="Enter blog title">
+                <input
+                    type="text"
+                    id="title"
+                    placeholder="Enter blog title"
+                >
+                <small id="titleError"></small>
 
                 <label for="author">Author Name</label>
-                <input type="text" id="author" placeholder="Enter author name">
+                <input
+                    type="text"
+                    id="author"
+                    placeholder="Enter author name"
+                >
+                <small id="authorError"></small>
 
                 <label for="content">Blog Content</label>
-                <textarea id="content" rows="8" placeholder="Write your blog here..."></textarea>
+                <textarea
+                    id="content"
+                    rows="8"
+                    placeholder="Write your blog here..."
+                ></textarea>
+                <small id="contentError"></small>
 
                 <button type="submit">Add Blog</button>
 
@@ -47,6 +62,8 @@
     <footer>
         <p>&copy; 2026 Simple Blog Management System | Codomax Internship</p>
     </footer>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
