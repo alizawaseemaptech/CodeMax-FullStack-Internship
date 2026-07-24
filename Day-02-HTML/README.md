@@ -2,7 +2,17 @@
 
 ## Project Overview
 
-A simple blog management system developed as part of the **CodeMax Full Stack Development Internship**. This project is being built step by step by implementing HTML, CSS, JavaScript, Express.js, and other full stack technologies.
+A Simple Blog Management System developed as part of the **CodeMax Full Stack Development Internship**. This project is being built step by step by implementing modern frontend and backend technologies, following industry-standard development practices.
+
+---
+
+## Day 1 - Environment Setup
+
+- Installed Node.js
+- Installed Express.js
+- Configured Development Environment
+- Created First Express Server
+- Successfully Ran Hello World Server
 
 ---
 
@@ -39,30 +49,49 @@ A simple blog management system developed as part of the **CodeMax Full Stack De
 
 ---
 
+## Day 5 - Express.js
+
+- Created Express Server
+- Implemented GET Route
+- Implemented POST Route
+- Added Express JSON Middleware
+- Backend Server Successfully Running
+- Prepared Backend for Blog API Development
+
+---
+
 ## Technologies Used
 
 - HTML5
 - CSS3
 - JavaScript (ES6)
+- Node.js
+- Express.js
+- Git & GitHub
 
 ---
 
 ## Features
 
-- Responsive Design
+- Responsive User Interface
+- Professional Navigation Bar
+- Blog Cards Layout
 - Blog Form Validation
-- Interactive User Experience
-- Clean User Interface
 - DOM Manipulation
 - Event Handling
+- Express Backend Server
+- REST API Foundation
+- Clean Project Structure
 
 ---
 
-## Status
+## Project Status
 
+✅ Day 1 Completed  
 ✅ Day 2 Completed  
 ✅ Day 3 Completed  
-✅ Day 4 Completed
+✅ Day 4 Completed  
+✅ Day 5 Completed
 
 ---
 
@@ -70,8 +99,8 @@ A simple blog management system developed as part of the **CodeMax Full Stack De
 
 **Aliza Waseem**
 
-Frontend & MERN Stack Developer
+Full Stack Web Developer
 
-GitHub: https://github.com/alizawaseemaptech
+**GitHub:** https://github.com/alizawaseemaptech
 
-LinkedIn: https://linkedin.com/in/alizawaseemwebdesigner20
+**LinkedIn:** https://linkedin.com/in/alizawaseemwebdesigner20
