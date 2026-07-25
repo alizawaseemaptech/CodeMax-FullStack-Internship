@@ -5,32 +5,46 @@ const PORT = 3000;
 
 app.use(express.json());
 
-// Home Route (GET)
+// JavaScript Array to Store Blogs
+let blogs = [];
+
+// Home Route
 app.get("/", (req, res) => {
-    res.send("Welcome to Simple Blog Management System API");
+    res.send("Welcome to Blog Management API");
 });
 
-// GET All Blogs Route
+// Get All Blogs
 app.get("/blogs", (req, res) => {
     res.json({
         success: true,
-        message: "Blogs fetched successfully",
-        blogs: []
+        blogs: blogs
     });
 });
 
-// POST Add Blog Route
+// Add Blog
 app.post("/add-blog", (req, res) => {
     const { title, author, content } = req.body;
 
-    res.json({
+    if (!title || !author || !content) {
+        return res.status(400).json({
+            success: false,
+            message: "Please fill all fields"
+        });
+    }
+
+    const newBlog = {
+        id: blogs.length + 1,
+        title,
+        author,
+        content
+    };
+
+    blogs.push(newBlog);
+
+    res.status(201).json({
         success: true,
-        message: "Blog Added Successfully!",
-        blog: {
-            title,
-            author,
-            content
-        }
+        message: "Blog added successfully",
+        blog: newBlog
     });
 });
 

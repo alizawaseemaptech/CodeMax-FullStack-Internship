@@ -60,6 +60,17 @@ A Simple Blog Management System developed as part of the **CodeMax Full Stack De
 
 ---
 
+## Day 6 - Add Blog API
+
+- Created Blog Management API
+- Implemented POST API to Add Blog Posts
+- Stored Blog Posts in a JavaScript Array
+- Implemented GET API to Fetch All Blog Posts
+- Returned JSON Responses
+- Tested APIs Successfully Using Postman
+
+---
+
 ## Technologies Used
 
 - HTML5
@@ -67,7 +78,9 @@ A Simple Blog Management System developed as part of the **CodeMax Full Stack De
 - JavaScript (ES6)
 - Node.js
 - Express.js
-- Git & GitHub
+- Postman
+- Git
+- GitHub
 
 ---
 
@@ -80,8 +93,51 @@ A Simple Blog Management System developed as part of the **CodeMax Full Stack De
 - DOM Manipulation
 - Event Handling
 - Express Backend Server
-- REST API Foundation
+- REST API Development
+- Add Blog API
+- Get All Blogs API
+- JSON Data Handling
 - Clean Project Structure
+
+---
+
+## API Endpoints
+
+### Home Route
+
+```http
+GET /
+```
+
+Returns:
+
+```text
+Welcome to Blog Management API
+```
+
+### Get All Blogs
+
+```http
+GET /blogs
+```
+
+Returns all blog posts stored in the JavaScript array.
+
+### Add Blog
+
+```http
+POST /add-blog
+```
+
+Sample Request:
+
+```json
+{
+  "title": "My First Blog",
+  "author": "Aliza",
+  "content": "Testing add blog API"
+}
+```
 
 ---
 
@@ -91,7 +147,8 @@ A Simple Blog Management System developed as part of the **CodeMax Full Stack De
 ✅ Day 2 Completed  
 ✅ Day 3 Completed  
 ✅ Day 4 Completed  
-✅ Day 5 Completed
+✅ Day 5 Completed  
+✅ Day 6 Completed
 
 ---
 
