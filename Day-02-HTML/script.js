@@ -1,47 +1,86 @@
+console.log("script.js loaded");
+
 const form = document.getElementById("blogForm");
 
-form.addEventListener("submit", function (event) {
+// Load Blogs on Home Page
+async function loadBlogs() {
+    const blogContainer = document.getElementById("blogContainer");
 
-    event.preventDefault();
-
-    const title = document.getElementById("title").value.trim();
-    const author = document.getElementById("author").value.trim();
-    const content = document.getElementById("content").value.trim();
-
-    document.getElementById("titleError").textContent = "";
-    document.getElementById("authorError").textContent = "";
-    document.getElementById("contentError").textContent = "";
-
-    let isValid = true;
-
-    // Title Validation
-    if (title === "") {
-        document.getElementById("titleError").textContent = "Blog title is required.";
-        isValid = false;
-    } else if (title.length < 3) {
-        document.getElementById("titleError").textContent = "Title must be at least 3 characters.";
-        isValid = false;
+    if (!blogContainer) {
+        console.log("blogContainer not found");
+        return;
     }
 
-    // Author Validation
-    if (author === "") {
-        document.getElementById("authorError").textContent = "Author name is required.";
-        isValid = false;
+    try {
+        const response = await fetch("/blogs");
+        const data = await response.json();
+
+        console.log("API Response:", data);
+
+        blogContainer.innerHTML = "";
+
+        if (!data.blogs || data.blogs.length === 0) {
+            blogContainer.innerHTML = "<h3>No blog posts available.</h3>";
+            return;
+        }
+
+        data.blogs.forEach(blog => {
+            const card = document.createElement("div");
+            card.className = "blog-card";
+
+            card.innerHTML = `
+                <h2>${blog.title}</h2>
+                <p><strong>Author:</strong> ${blog.author}</p>
+                <p>${blog.content}</p>
+            `;
+
+            blogContainer.appendChild(card);
+        });
+
+    } catch (err) {
+        console.error(err);
     }
+}
 
-    // Content Validation
-    if (content === "") {
-        document.getElementById("contentError").textContent = "Blog content is required.";
-        isValid = false;
-    } else if (content.length < 20) {
-        document.getElementById("contentError").textContent = "Content must be at least 20 characters.";
-        isValid = false;
-    }
+// Add Blog
+if (form) {
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-    if (isValid) {
-        alert("Blog Added Successfully!");
+        const title = document.getElementById("title").value.trim();
+        const author = document.getElementById("author").value.trim();
+        const content = document.getElementById("content").value.trim();
 
-        form.reset();
-    }
+        if (!title || !author || !content) {
+            alert("Please fill all fields.");
+            return;
+        }
 
-});
+        try {
+            const response = await fetch("/add-blog", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    title,
+                    author,
+                    content
+                })
+            });
+
+            const data = await response.json();
+
+            alert(data.message);
+
+            form.reset();
+
+            window.location.href = "/";
+
+        } catch (err) {
+            console.error(err);
+        }
+    });
+}
+
+loadBlogs();
