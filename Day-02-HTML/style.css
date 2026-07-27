@@ -1,4 +1,6 @@
-/* ===== Dynamic Blog Cards ===== */
+/* ===========================
+   Dynamic Blog Cards (Day 8)
+=========================== */
 
 #blogContainer {
     margin-top: 30px;
@@ -11,13 +13,13 @@
     background: #ffffff;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.10);
-    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+    transition: all 0.3s ease;
 }
 
 .blog-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .blog-card h2 {
@@ -37,46 +39,62 @@
     color: #0f172a;
 }
 
-/* ===== Edit Button ===== */
+/* ===========================
+   Buttons
+=========================== */
 
-.blog-card button {
+.blog-card button,
+.edit-btn {
     margin-top: 15px;
+    margin-right: 10px;
     background-color: #2563eb;
-    color: #fff;
+    color: #ffffff;
     border: none;
     padding: 10px 18px;
     border-radius: 6px;
     cursor: pointer;
     font-size: 15px;
-    transition: 0.3s;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.blog-card button:hover {
+.blog-card button:hover,
+.edit-btn:hover {
     background-color: #1d4ed8;
+    transform: scale(1.05);
 }
 
-/* ===== Responsive ===== */
+.blog-card button:active,
+.edit-btn:active {
+    transform: scale(0.98);
+}
 
-@media (max-width:768px){
+/* ===========================
+   Responsive
+=========================== */
 
-    #blogContainer{
-        gap:15px;
+@media (max-width: 768px) {
+
+    #blogContainer {
+        gap: 15px;
     }
 
-    .blog-card{
-        padding:15px;
+    .blog-card {
+        padding: 15px;
     }
 
-    .blog-card h2{
-        font-size:22px;
+    .blog-card h2 {
+        font-size: 22px;
     }
 
-    .blog-card p{
-        font-size:15px;
+    .blog-card p {
+        font-size: 15px;
     }
 
-    .blog-card button{
-        width:100%;
+    .blog-card button,
+    .edit-btn {
+        width: 100%;
+        margin-right: 0;
     }
 
 }

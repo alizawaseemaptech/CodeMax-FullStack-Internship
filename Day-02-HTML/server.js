@@ -89,6 +89,13 @@ app.put("/update-blog/:id", (req, res) => {
         });
     }
 
+    if (!title || !author || !content) {
+        return res.status(400).json({
+            success: false,
+            message: "Please fill all fields"
+        });
+    }
+
     blog.title = title;
     blog.author = author;
     blog.content = content;
