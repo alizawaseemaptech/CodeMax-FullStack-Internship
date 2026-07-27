@@ -85,9 +85,19 @@ A Simple Blog Management System developed as part of the **CodeMax Full Stack De
 
 - Added Edit Button for Every Blog Post
 - Implemented PUT API to Update Blog Posts
-- Allowed Users to Edit Existing Blogs
+- Allowed Users to Edit Existing Blog Posts
 - Updated Blog Details Successfully
-- Refreshed Blog List After Editing
+- Refreshed Blog List Automatically After Editing
+
+---
+
+## Day 9 - Delete Blog
+
+- Added Delete Button for Every Blog Post
+- Implemented DELETE API to Remove Blog Posts
+- Deleted Blog Posts from JavaScript Array
+- Updated Blog List Automatically After Deletion
+- Tested Delete API Successfully Using Postman
 
 ---
 
@@ -108,7 +118,7 @@ A Simple Blog Management System developed as part of the **CodeMax Full Stack De
 
 - Responsive User Interface
 - Professional Navigation Bar
-- Blog Cards Layout
+- Dynamic Blog Cards
 - Blog Form Validation
 - DOM Manipulation
 - Event Handling
@@ -117,8 +127,10 @@ A Simple Blog Management System developed as part of the **CodeMax Full Stack De
 - Add Blog API
 - Get All Blogs API
 - Update Blog API
+- Delete Blog API
 - Dynamic Blog Display
 - Edit Existing Blog Posts
+- Delete Existing Blog Posts
 - JSON Data Handling
 - Clean Project Structure
 
@@ -148,7 +160,7 @@ Returns all blog posts stored in the JavaScript array.
 POST /add-blog
 ```
 
-Sample Request:
+Sample Request
 
 ```json
 {
@@ -164,7 +176,7 @@ Sample Request:
 PUT /update-blog/:id
 ```
 
-Sample Request:
+Sample Request
 
 ```json
 {
@@ -172,6 +184,18 @@ Sample Request:
   "author": "Aliza",
   "content": "Updated blog content."
 }
+```
+
+### Delete Blog
+
+```http
+DELETE /delete-blog/:id
+```
+
+Example
+
+```http
+DELETE /delete-blog/1
 ```
 
 ---
@@ -185,7 +209,8 @@ Sample Request:
 ✅ Day 5 Completed  
 ✅ Day 6 Completed  
 ✅ Day 7 Completed  
-✅ Day 8 Completed
+✅ Day 8 Completed  
+✅ Day 9 Completed
 
 ---
 
