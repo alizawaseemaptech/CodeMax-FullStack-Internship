@@ -1,5 +1,5 @@
 /* ===========================
-   Dynamic Blog Cards (Day 8)
+   Dynamic Blog Cards (Day 9)
 =========================== */
 
 #blogContainer {
@@ -43,58 +43,74 @@
    Buttons
 =========================== */
 
-.blog-card button,
-.edit-btn {
+.edit-btn,
+.delete-btn {
     margin-top: 15px;
     margin-right: 10px;
-    background-color: #2563eb;
-    color: #ffffff;
+    color: #fff;
     border: none;
     padding: 10px 18px;
     border-radius: 6px;
     cursor: pointer;
     font-size: 15px;
     font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
 }
 
-.blog-card button:hover,
+/* Edit Button */
+
+.edit-btn {
+    background-color: #2563eb;
+}
+
 .edit-btn:hover {
     background-color: #1d4ed8;
     transform: scale(1.05);
 }
 
-.blog-card button:active,
-.edit-btn:active {
-    transform: scale(0.98);
+/* Delete Button */
+
+.delete-btn {
+    background-color: #dc2626;
+}
+
+.delete-btn:hover {
+    background-color: #b91c1c;
+    transform: scale(1.05);
+}
+
+.edit-btn:active,
+.delete-btn:active {
+    transform: scale(0.97);
 }
 
 /* ===========================
    Responsive
 =========================== */
 
-@media (max-width: 768px) {
+@media (max-width:768px){
 
-    #blogContainer {
-        gap: 15px;
+    #blogContainer{
+        gap:15px;
     }
 
-    .blog-card {
-        padding: 15px;
+    .blog-card{
+        padding:15px;
     }
 
-    .blog-card h2 {
-        font-size: 22px;
+    .blog-card h2{
+        font-size:22px;
     }
 
-    .blog-card p {
-        font-size: 15px;
+    .blog-card p{
+        font-size:15px;
     }
 
-    .blog-card button,
-    .edit-btn {
-        width: 100%;
-        margin-right: 0;
+    .edit-btn,
+    .delete-btn{
+        width:100%;
+        margin-right:0;
+        margin-bottom:10px;
     }
 
 }

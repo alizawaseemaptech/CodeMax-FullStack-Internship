@@ -4,12 +4,14 @@ const path = require("path");
 const app = express();
 const PORT = 5000;
 
-// Middleware
+// ================= Middleware =================
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
 
-// JavaScript Array to Store Blogs
+console.log("✅ UPDATED SERVER STARTED");
+
+// ================= Blog Data =================
 let blogs = [
     {
         id: 1,
@@ -25,17 +27,17 @@ let blogs = [
     }
 ];
 
-// Home Page
+// ================= Home =================
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
 });
 
-// Add Blog Page
+// ================= Add Blog Page =================
 app.get("/add-blog.html", (req, res) => {
     res.sendFile(path.join(__dirname, "add-blog.html"));
 });
 
-// Get All Blogs
+// ================= Get All Blogs =================
 app.get("/blogs", (req, res) => {
     res.status(200).json({
         success: true,
@@ -43,7 +45,7 @@ app.get("/blogs", (req, res) => {
     });
 });
 
-// Add Blog
+// ================= Add Blog =================
 app.post("/add-blog", (req, res) => {
 
     const { title, author, content } = req.body;
@@ -69,16 +71,13 @@ app.post("/add-blog", (req, res) => {
         message: "Blog added successfully",
         blog: newBlog
     });
+
 });
 
-// ===========================
-// Update Blog (Day 8)
-// ===========================
+// ================= Update Blog =================
 app.put("/update-blog/:id", (req, res) => {
 
     const id = parseInt(req.params.id);
-
-    const { title, author, content } = req.body;
 
     const blog = blogs.find(b => b.id === id);
 
@@ -88,6 +87,8 @@ app.put("/update-blog/:id", (req, res) => {
             message: "Blog not found"
         });
     }
+
+    const { title, author, content } = req.body;
 
     if (!title || !author || !content) {
         return res.status(400).json({
@@ -105,14 +106,48 @@ app.put("/update-blog/:id", (req, res) => {
         message: "Blog updated successfully",
         blog
     });
+
 });
 
-// 404 Page
+// ================= Delete Blog =================
+app.delete("/delete-blog/:id", (req, res) => {
+
+    console.log("✅ DELETE API HIT");
+
+    const id = parseInt(req.params.id);
+
+    const index = blogs.findIndex(blog => blog.id === id);
+
+    if (index === -1) {
+        return res.status(404).json({
+            success: false,
+            message: "Blog not found"
+        });
+    }
+
+    blogs.splice(index, 1);
+
+    res.status(200).json({
+        success: true,
+        message: "Blog deleted successfully"
+    });
+
+});
+
+// ================= Test Route =================
+app.get("/test", (req, res) => {
+    res.send("Server Working");
+});
+
+// ================= 404 =================
 app.use((req, res) => {
-    res.status(404).send("404 - Page Not Found");
+    res.status(404).json({
+        success: false,
+        message: "Route Not Found"
+    });
 });
 
-// Start Server
+// ================= Server =================
 app.listen(PORT, () => {
-    console.log(`✅ Server running at http://localhost:${PORT}`);
+    console.log(`🚀 Server running at http://localhost:${PORT}`);
 });

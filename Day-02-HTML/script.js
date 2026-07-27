@@ -18,7 +18,7 @@ async function loadBlogs() {
 
         blogContainer.innerHTML = "";
 
-        if (data.blogs.length === 0) {
+        if (!data.blogs || data.blogs.length === 0) {
             blogContainer.innerHTML = "<h3>No Blogs Available</h3>";
             return;
         }
@@ -35,6 +35,10 @@ async function loadBlogs() {
 
                 <button onclick="editBlog(${blog.id})" class="edit-btn">
                     Edit
+                </button>
+
+                <button onclick="deleteBlog(${blog.id})" class="delete-btn">
+                    Delete
                 </button>
             `;
 
@@ -90,6 +94,33 @@ async function editBlog(id) {
     alert(result.message);
 
     loadBlogs();
+
+}
+
+// ==========================
+// Delete Blog (Day 9)
+// ==========================
+async function deleteBlog(id) {
+
+    const confirmDelete = confirm("Are you sure you want to delete this blog?");
+
+    if (!confirmDelete) return;
+
+    try {
+
+        const response = await fetch(`/delete-blog/${id}`, {
+            method: "DELETE"
+        });
+
+        const data = await response.json();
+
+        alert(data.message);
+
+        loadBlogs();
+
+    } catch (error) {
+        console.log(error);
+    }
 
 }
 
