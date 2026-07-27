@@ -71,6 +71,26 @@ A Simple Blog Management System developed as part of the **CodeMax Full Stack De
 
 ---
 
+## Day 7 - View Blogs
+
+- Displayed All Blog Posts on the Home Page
+- Connected Frontend with Backend using Fetch API
+- Retrieved Blog Data from GET /blogs API
+- Dynamically Rendered Blog Cards
+- Users Can View All Blog Posts Successfully
+
+---
+
+## Day 8 - Edit Blog
+
+- Added Edit Button for Every Blog Post
+- Implemented PUT API to Update Blog Posts
+- Allowed Users to Edit Existing Blogs
+- Updated Blog Details Successfully
+- Refreshed Blog List After Editing
+
+---
+
 ## Technologies Used
 
 - HTML5
@@ -96,6 +116,9 @@ A Simple Blog Management System developed as part of the **CodeMax Full Stack De
 - REST API Development
 - Add Blog API
 - Get All Blogs API
+- Update Blog API
+- Dynamic Blog Display
+- Edit Existing Blog Posts
 - JSON Data Handling
 - Clean Project Structure
 
@@ -109,11 +132,7 @@ A Simple Blog Management System developed as part of the **CodeMax Full Stack De
 GET /
 ```
 
-Returns:
-
-```text
-Welcome to Blog Management API
-```
+Returns Home Page.
 
 ### Get All Blogs
 
@@ -139,6 +158,22 @@ Sample Request:
 }
 ```
 
+### Update Blog
+
+```http
+PUT /update-blog/:id
+```
+
+Sample Request:
+
+```json
+{
+  "title": "Updated Blog",
+  "author": "Aliza",
+  "content": "Updated blog content."
+}
+```
+
 ---
 
 ## Project Status
@@ -148,7 +183,9 @@ Sample Request:
 ✅ Day 3 Completed  
 ✅ Day 4 Completed  
 ✅ Day 5 Completed  
-✅ Day 6 Completed
+✅ Day 6 Completed  
+✅ Day 7 Completed  
+✅ Day 8 Completed
 
 ---
 

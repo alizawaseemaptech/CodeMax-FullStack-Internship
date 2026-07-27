@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,36 +8,40 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+    <!-- Header -->
     <header>
         <nav>
             <h2>Simple Blog</h2>
 
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="add-blog.html">Add Blog</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/add-blog.html">Add Blog</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Main Content -->
     <main>
 
-        <section>
+        <section class="hero">
             <h1>Welcome to Simple Blog</h1>
             <p>Share your ideas, stories and knowledge with the world.</p>
         </section>
 
-        <section>
+        <section class="blogs-section">
             <h2>Latest Blog Posts</h2>
 
-            <!-- Blogs will appear here -->
+            <!-- Blogs will load here dynamically -->
             <div id="blogContainer"></div>
 
         </section>
 
     </main>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Simple Blog Management System | CodeMax Internship</p>
     </footer>
@@ -44,4 +49,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>

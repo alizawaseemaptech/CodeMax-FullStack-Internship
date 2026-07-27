@@ -71,6 +71,35 @@ app.post("/add-blog", (req, res) => {
     });
 });
 
+// ===========================
+// Update Blog (Day 8)
+// ===========================
+app.put("/update-blog/:id", (req, res) => {
+
+    const id = parseInt(req.params.id);
+
+    const { title, author, content } = req.body;
+
+    const blog = blogs.find(b => b.id === id);
+
+    if (!blog) {
+        return res.status(404).json({
+            success: false,
+            message: "Blog not found"
+        });
+    }
+
+    blog.title = title;
+    blog.author = author;
+    blog.content = content;
+
+    res.status(200).json({
+        success: true,
+        message: "Blog updated successfully",
+        blog
+    });
+});
+
 // 404 Page
 app.use((req, res) => {
     res.status(404).send("404 - Page Not Found");
