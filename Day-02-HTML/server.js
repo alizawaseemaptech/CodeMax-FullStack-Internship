@@ -9,145 +9,140 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
 
-console.log("✅ UPDATED SERVER STARTED");
+console.log("✅ Server Started Successfully");
 
 // ================= Blog Data =================
 let blogs = [
-    {
-        id: 1,
-        title: "Welcome to My Blog",
-        author: "Aliza",
-        content: "This is my first blog post created during the CodeMax Full Stack Internship."
-    },
-    {
-        id: 2,
-        title: "Learning Express.js",
-        author: "Aliza",
-        content: "Express.js makes it easy to build REST APIs and backend applications using Node.js."
-    }
+  {
+    id: 1,
+    title: "Welcome to My Blog",
+    author: "Aliza",
+    content:
+      "This is my first blog post created during the CodeMax Full Stack Development Internship."
+  },
+  {
+    id: 2,
+    title: "Learning Express.js",
+    author: "Aliza",
+    content:
+      "Express.js makes backend development simple and powerful."
+  }
 ];
 
-// ================= Home =================
+// ================= Routes =================
+
+// Home Page
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "index.html"));
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
-// ================= Add Blog Page =================
+// Add Blog Page
 app.get("/add-blog.html", (req, res) => {
-    res.sendFile(path.join(__dirname, "add-blog.html"));
+  res.sendFile(path.join(__dirname, "add-blog.html"));
 });
 
-// ================= Get All Blogs =================
+// Get All Blogs
 app.get("/blogs", (req, res) => {
-    res.status(200).json({
-        success: true,
-        blogs: blogs
-    });
+  res.status(200).json({
+    success: true,
+    blogs
+  });
 });
 
-// ================= Add Blog =================
+// Add Blog
 app.post("/add-blog", (req, res) => {
 
-    const { title, author, content } = req.body;
+  const { title, author, content } = req.body;
 
-    if (!title || !author || !content) {
-        return res.status(400).json({
-            success: false,
-            message: "Please fill all fields"
-        });
-    }
-
-    const newBlog = {
-        id: blogs.length + 1,
-        title,
-        author,
-        content
-    };
-
-    blogs.push(newBlog);
-
-    res.status(201).json({
-        success: true,
-        message: "Blog added successfully",
-        blog: newBlog
+  if (!title || !author || !content) {
+    return res.status(400).json({
+      success: false,
+      message: "Please fill all fields."
     });
+  }
+
+  const newBlog = {
+    id: blogs.length + 1,
+    title,
+    author,
+    content
+  };
+
+  blogs.push(newBlog);
+
+  res.status(201).json({
+    success: true,
+    message: "Blog Added Successfully!",
+    blog: newBlog
+  });
 
 });
 
-// ================= Update Blog =================
+// Update Blog
 app.put("/update-blog/:id", (req, res) => {
 
-    const id = parseInt(req.params.id);
+  const id = Number(req.params.id);
 
-    const blog = blogs.find(b => b.id === id);
+  const blog = blogs.find(item => item.id === id);
 
-    if (!blog) {
-        return res.status(404).json({
-            success: false,
-            message: "Blog not found"
-        });
-    }
-
-    const { title, author, content } = req.body;
-
-    if (!title || !author || !content) {
-        return res.status(400).json({
-            success: false,
-            message: "Please fill all fields"
-        });
-    }
-
-    blog.title = title;
-    blog.author = author;
-    blog.content = content;
-
-    res.status(200).json({
-        success: true,
-        message: "Blog updated successfully",
-        blog
+  if (!blog) {
+    return res.status(404).json({
+      success: false,
+      message: "Blog not found."
     });
+  }
+
+  const { title, author, content } = req.body;
+
+  blog.title = title;
+  blog.author = author;
+  blog.content = content;
+
+  res.status(200).json({
+    success: true,
+    message: "Blog Updated Successfully!",
+    blog
+  });
 
 });
 
-// ================= Delete Blog =================
+// Delete Blog
 app.delete("/delete-blog/:id", (req, res) => {
 
-    console.log("✅ DELETE API HIT");
+  const id = Number(req.params.id);
 
-    const id = parseInt(req.params.id);
+  const index = blogs.findIndex(item => item.id === id);
 
-    const index = blogs.findIndex(blog => blog.id === id);
-
-    if (index === -1) {
-        return res.status(404).json({
-            success: false,
-            message: "Blog not found"
-        });
-    }
-
-    blogs.splice(index, 1);
-
-    res.status(200).json({
-        success: true,
-        message: "Blog deleted successfully"
+  if (index === -1) {
+    return res.status(404).json({
+      success: false,
+      message: "Blog not found."
     });
+  }
+
+  blogs.splice(index, 1);
+
+  res.status(200).json({
+    success: true,
+    message: "Blog Deleted Successfully!"
+  });
 
 });
 
-// ================= Test Route =================
+// Test Route
 app.get("/test", (req, res) => {
-    res.send("Server Working");
+  res.send("✅ Server Working Perfectly");
 });
 
-// ================= 404 =================
+// 404 Route
 app.use((req, res) => {
-    res.status(404).json({
-        success: false,
-        message: "Route Not Found"
-    });
+  res.status(404).json({
+    success: false,
+    message: "Route Not Found"
+  });
 });
 
-// ================= Server =================
+// Start Server
 app.listen(PORT, () => {
-    console.log(`🚀 Server running at http://localhost:${PORT}`);
+  console.log(`🚀 Server running at http://localhost:${PORT}`);
 });

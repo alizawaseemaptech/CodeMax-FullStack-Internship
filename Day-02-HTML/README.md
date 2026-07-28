@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-A Simple Blog Management System developed as part of the **CodeMax Full Stack Development Internship**. This project is being built step by step by implementing modern frontend and backend technologies, following industry-standard development practices.
+A Simple Blog Management System developed as part of the **CodeMax Full Stack Development Internship**. This project is built step by step using HTML, CSS, JavaScript, Node.js, Express.js, REST APIs, and Fetch API.
 
 ---
 
@@ -64,40 +64,49 @@ A Simple Blog Management System developed as part of the **CodeMax Full Stack De
 
 - Created Blog Management API
 - Implemented POST API to Add Blog Posts
-- Stored Blog Posts in a JavaScript Array
+- Stored Blog Posts in JavaScript Array
 - Implemented GET API to Fetch All Blog Posts
 - Returned JSON Responses
-- Tested APIs Successfully Using Postman
+- Tested APIs Successfully
 
 ---
 
 ## Day 7 - View Blogs
 
 - Displayed All Blog Posts on the Home Page
-- Connected Frontend with Backend using Fetch API
-- Retrieved Blog Data from GET /blogs API
+- Retrieved Blog Data using GET API
 - Dynamically Rendered Blog Cards
-- Users Can View All Blog Posts Successfully
+- Improved User Experience
 
 ---
 
 ## Day 8 - Edit Blog
 
-- Added Edit Button for Every Blog Post
-- Implemented PUT API to Update Blog Posts
-- Allowed Users to Edit Existing Blog Posts
-- Updated Blog Details Successfully
-- Refreshed Blog List Automatically After Editing
+- Added Edit Button for Every Blog
+- Implemented PUT API
+- Updated Existing Blog Posts
+- Refreshed Blog List Automatically
 
 ---
 
 ## Day 9 - Delete Blog
 
-- Added Delete Button for Every Blog Post
-- Implemented DELETE API to Remove Blog Posts
-- Deleted Blog Posts from JavaScript Array
-- Updated Blog List Automatically After Deletion
-- Tested Delete API Successfully Using Postman
+- Added Delete Button for Every Blog
+- Implemented DELETE API
+- Deleted Blog Posts Successfully
+- Updated Blog List Automatically
+
+---
+
+## Day 10 - Frontend Integration
+
+- Connected Frontend with Express Backend
+- Used Fetch API for GET Requests
+- Used Fetch API for POST Requests
+- Loaded Blogs Dynamically
+- Submitted Blog Form to Backend
+- Displayed API Responses
+- Integrated Frontend with REST APIs Successfully
 
 ---
 
@@ -108,7 +117,8 @@ A Simple Blog Management System developed as part of the **CodeMax Full Stack De
 - JavaScript (ES6)
 - Node.js
 - Express.js
-- Postman
+- Fetch API
+- REST API
 - Git
 - GitHub
 
@@ -124,13 +134,12 @@ A Simple Blog Management System developed as part of the **CodeMax Full Stack De
 - Event Handling
 - Express Backend Server
 - REST API Development
-- Add Blog API
-- Get All Blogs API
-- Update Blog API
-- Delete Blog API
-- Dynamic Blog Display
-- Edit Existing Blog Posts
-- Delete Existing Blog Posts
+- Add Blog
+- View Blogs
+- Edit Blog
+- Delete Blog
+- Fetch API Integration
+- Dynamic Frontend and Backend Communication
 - JSON Data Handling
 - Clean Project Structure
 
@@ -152,7 +161,7 @@ Returns Home Page.
 GET /blogs
 ```
 
-Returns all blog posts stored in the JavaScript array.
+Returns all blog posts.
 
 ### Add Blog
 
@@ -166,7 +175,7 @@ Sample Request
 {
   "title": "My First Blog",
   "author": "Aliza",
-  "content": "Testing add blog API"
+  "content": "Testing Blog API"
 }
 ```
 
@@ -182,7 +191,7 @@ Sample Request
 {
   "title": "Updated Blog",
   "author": "Aliza",
-  "content": "Updated blog content."
+  "content": "Updated blog content"
 }
 ```
 
@@ -210,7 +219,8 @@ DELETE /delete-blog/1
 ✅ Day 6 Completed  
 ✅ Day 7 Completed  
 ✅ Day 8 Completed  
-✅ Day 9 Completed
+✅ Day 9 Completed  
+✅ Day 10 Completed
 
 ---
 

@@ -14,8 +14,8 @@
             <h2>Simple Blog</h2>
 
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="add-blog.html">Add Blog</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/add-blog.html">Add Blog</a></li>
             </ul>
         </nav>
     </header>
@@ -23,6 +23,7 @@
     <main>
 
         <section>
+
             <h1>Add New Blog</h1>
 
             <form id="blogForm">
@@ -33,7 +34,7 @@
                     id="title"
                     placeholder="Enter blog title"
                 >
-                <small id="titleError"></small>
+                <small id="titleError" class="error"></small>
 
                 <label for="author">Author Name</label>
                 <input
@@ -41,7 +42,7 @@
                     id="author"
                     placeholder="Enter author name"
                 >
-                <small id="authorError"></small>
+                <small id="authorError" class="error"></small>
 
                 <label for="content">Blog Content</label>
                 <textarea
@@ -49,18 +50,21 @@
                     rows="8"
                     placeholder="Write your blog here..."
                 ></textarea>
-                <small id="contentError"></small>
+                <small id="contentError" class="error"></small>
 
                 <button type="submit">Add Blog</button>
 
             </form>
+
+            <!-- Success / Error Message -->
+            <p id="message"></p>
 
         </section>
 
     </main>
 
     <footer>
-        <p>&copy; 2026 Simple Blog Management System | Codomax Internship</p>
+        <p>&copy; 2026 Simple Blog Management System | CodeMax Internship</p>
     </footer>
 
     <script src="script.js"></script>

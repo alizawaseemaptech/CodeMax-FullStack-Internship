@@ -1,6 +1,10 @@
-console.log("script.js loaded");
+console.log("✅ script.js loaded");
 
+// ==========================
+// Elements
+// ==========================
 const form = document.getElementById("blogForm");
+const message = document.getElementById("message");
 
 // ==========================
 // Load Blogs
@@ -18,26 +22,28 @@ async function loadBlogs() {
 
         blogContainer.innerHTML = "";
 
-        if (!data.blogs || data.blogs.length === 0) {
+        if (!data.success || data.blogs.length === 0) {
             blogContainer.innerHTML = "<h3>No Blogs Available</h3>";
             return;
         }
 
-        data.blogs.forEach((blog) => {
+        data.blogs.forEach(blog => {
 
             const card = document.createElement("div");
             card.className = "blog-card";
 
             card.innerHTML = `
                 <h2>${blog.title}</h2>
+
                 <p><strong>Author:</strong> ${blog.author}</p>
+
                 <p>${blog.content}</p>
 
-                <button onclick="editBlog(${blog.id})" class="edit-btn">
+                <button class="edit-btn" onclick="editBlog(${blog.id})">
                     Edit
                 </button>
 
-                <button onclick="deleteBlog(${blog.id})" class="delete-btn">
+                <button class="delete-btn" onclick="deleteBlog(${blog.id})">
                     Delete
                 </button>
             `;
@@ -47,8 +53,105 @@ async function loadBlogs() {
         });
 
     } catch (error) {
-        console.log(error);
+
+        console.error(error);
+
     }
+
+}
+
+// ==========================
+// Add Blog
+// ==========================
+if (form) {
+
+    form.addEventListener("submit", async (e) => {
+
+        e.preventDefault();
+
+        const title = document.getElementById("title").value.trim();
+        const author = document.getElementById("author").value.trim();
+        const content = document.getElementById("content").value.trim();
+
+        document.getElementById("titleError").textContent = "";
+        document.getElementById("authorError").textContent = "";
+        document.getElementById("contentError").textContent = "";
+
+        let valid = true;
+
+        if (!title) {
+            document.getElementById("titleError").textContent = "Title is required";
+            valid = false;
+        }
+
+        if (!author) {
+            document.getElementById("authorError").textContent = "Author is required";
+            valid = false;
+        }
+
+        if (!content) {
+            document.getElementById("contentError").textContent = "Content is required";
+            valid = false;
+        }
+
+        if (!valid) return;
+
+        try {
+
+            const response = await fetch("/add-blog", {
+
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    title,
+                    author,
+                    content
+                })
+
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+
+                if (message) {
+                    message.style.color = "green";
+                    message.textContent = data.message;
+                }
+
+                alert(data.message);
+
+                form.reset();
+
+                setTimeout(() => {
+                    window.location.href = "/";
+                }, 800);
+
+            } else {
+
+                if (message) {
+                    message.style.color = "red";
+                    message.textContent = data.message;
+                }
+
+            }
+
+        } catch (error) {
+
+            console.error(error);
+
+            if (message) {
+                message.style.color = "red";
+                message.textContent = "Server Error!";
+            }
+
+        }
+
+    });
 
 }
 
@@ -73,7 +176,7 @@ async function editBlog(id) {
     const content = prompt("Edit Content", blog.content);
     if (content === null) return;
 
-    const updateResponse = await fetch(`/update-blog/${id}`, {
+    const update = await fetch(`/update-blog/${id}`, {
 
         method: "PUT",
 
@@ -89,7 +192,7 @@ async function editBlog(id) {
 
     });
 
-    const result = await updateResponse.json();
+    const result = await update.json();
 
     alert(result.message);
 
@@ -98,18 +201,18 @@ async function editBlog(id) {
 }
 
 // ==========================
-// Delete Blog (Day 9)
+// Delete Blog
 // ==========================
 async function deleteBlog(id) {
 
-    const confirmDelete = confirm("Are you sure you want to delete this blog?");
-
-    if (!confirmDelete) return;
+    if (!confirm("Delete this blog?")) return;
 
     try {
 
         const response = await fetch(`/delete-blog/${id}`, {
+
             method: "DELETE"
+
         });
 
         const data = await response.json();
@@ -118,63 +221,13 @@ async function deleteBlog(id) {
 
         loadBlogs();
 
-    } catch (error) {
-        console.log(error);
     }
 
-}
+    catch (error) {
 
-// ==========================
-// Add Blog
-// ==========================
-if (form) {
+        console.error(error);
 
-    form.addEventListener("submit", async function (e) {
-
-        e.preventDefault();
-
-        const title = document.getElementById("title").value.trim();
-        const author = document.getElementById("author").value.trim();
-        const content = document.getElementById("content").value.trim();
-
-        if (!title || !author || !content) {
-            alert("Please fill all fields.");
-            return;
-        }
-
-        try {
-
-            const response = await fetch("/add-blog", {
-
-                method: "POST",
-
-                headers: {
-                    "Content-Type": "application/json"
-                },
-
-                body: JSON.stringify({
-                    title,
-                    author,
-                    content
-                })
-
-            });
-
-            const data = await response.json();
-
-            alert(data.message);
-
-            form.reset();
-
-            window.location.href = "/";
-
-        } catch (error) {
-
-            console.log(error);
-
-        }
-
-    });
+    }
 
 }
 
