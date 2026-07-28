@@ -6,6 +6,8 @@ A Simple Blog Management System developed as part of the **CodeMax Full Stack De
 
 ---
 
+# Development Journey
+
 ## Day 1 - Environment Setup
 
 - Installed Node.js
@@ -73,7 +75,7 @@ A Simple Blog Management System developed as part of the **CodeMax Full Stack De
 
 ## Day 7 - View Blogs
 
-- Displayed All Blog Posts on the Home Page
+- Displayed All Blog Posts on Home Page
 - Retrieved Blog Data using GET API
 - Dynamically Rendered Blog Cards
 - Improved User Experience
@@ -110,7 +112,21 @@ A Simple Blog Management System developed as part of the **CodeMax Full Stack De
 
 ---
 
-## Technologies Used
+# Day 11 - Animations & UI Enhancement
+
+- Added Smooth Scrolling
+- Added CSS Animations
+- Added Card Hover Effects
+- Added Button Hover Effects
+- Added Smooth Transitions
+- Added Image Hover Animation
+- Improved Navbar Hover Interaction
+- Enhanced Overall User Experience
+- Made Interface More Modern and Interactive
+
+---
+
+# Technologies Used
 
 - HTML5
 - CSS3
@@ -124,7 +140,7 @@ A Simple Blog Management System developed as part of the **CodeMax Full Stack De
 
 ---
 
-## Features
+# Features
 
 - Responsive User Interface
 - Professional Navigation Bar
@@ -141,95 +157,16 @@ A Simple Blog Management System developed as part of the **CodeMax Full Stack De
 - Fetch API Integration
 - Dynamic Frontend and Backend Communication
 - JSON Data Handling
+- Smooth Animations
+- Hover Effects
+- Smooth Scrolling
 - Clean Project Structure
 
 ---
 
-## API Endpoints
+# API Endpoints
 
-### Home Route
+## Home Route
 
 ```http
 GET /
-```
-
-Returns Home Page.
-
-### Get All Blogs
-
-```http
-GET /blogs
-```
-
-Returns all blog posts.
-
-### Add Blog
-
-```http
-POST /add-blog
-```
-
-Sample Request
-
-```json
-{
-  "title": "My First Blog",
-  "author": "Aliza",
-  "content": "Testing Blog API"
-}
-```
-
-### Update Blog
-
-```http
-PUT /update-blog/:id
-```
-
-Sample Request
-
-```json
-{
-  "title": "Updated Blog",
-  "author": "Aliza",
-  "content": "Updated blog content"
-}
-```
-
-### Delete Blog
-
-```http
-DELETE /delete-blog/:id
-```
-
-Example
-
-```http
-DELETE /delete-blog/1
-```
-
----
-
-## Project Status
-
-✅ Day 1 Completed  
-✅ Day 2 Completed  
-✅ Day 3 Completed  
-✅ Day 4 Completed  
-✅ Day 5 Completed  
-✅ Day 6 Completed  
-✅ Day 7 Completed  
-✅ Day 8 Completed  
-✅ Day 9 Completed  
-✅ Day 10 Completed
-
----
-
-## Author
-
-**Aliza Waseem**
-
-Full Stack Web Developer
-
-**GitHub:** https://github.com/alizawaseemaptech
-
-**LinkedIn:** https://linkedin.com/in/alizawaseemwebdesigner20

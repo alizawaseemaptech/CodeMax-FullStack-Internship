@@ -2,58 +2,133 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Simple Blog | Home</title>
 
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
+
     <!-- Header -->
+
     <header>
-        <nav>
-            <h2>Simple Blog</h2>
+
+        <nav class="navbar">
+
+            <h2 class="logo">
+                Simple Blog
+            </h2>
+
 
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/add-blog.html">Add Blog</a></li>
+
+                <li>
+                    <a href="#home">
+                        Home
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="add-blog.html">
+                        Add Blog
+                    </a>
+                </li>
+
             </ul>
+
+
         </nav>
+
     </header>
 
+
+
     <!-- Hero -->
+
     <main>
 
-        <section class="hero">
-            <h1>Welcome to Simple Blog</h1>
-            <p>Share your ideas, stories and knowledge with the world.</p>
+
+        <section class="hero fade-in" id="home">
+
+
+            <h1>
+                Welcome to Simple Blog
+            </h1>
+
+
+            <p>
+                Share your ideas, stories and knowledge with the world.
+            </p>
+
+
         </section>
 
-        <!-- Blog List -->
-        <section class="blogs-section">
 
-            <h2>Latest Blog Posts</h2>
+
+
+        <!-- Blog Section -->
+
+
+        <section class="blogs-section fade-in">
+
+
+            <h2>
+                Latest Blog Posts
+            </h2>
+
+
 
             <div id="blogContainer">
+
 
                 <p class="loading">
                     Loading blogs...
                 </p>
 
+
             </div>
+
+
 
         </section>
 
+
+
     </main>
 
+
+
+
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Simple Blog Management System | CodeMax Full Stack Internship</p>
+
+
+    <footer class="fade-in">
+
+
+        <p>
+            &copy; 2026 Simple Blog Management System |
+            CodeMax Full Stack Internship
+        </p>
+
+
     </footer>
 
+
+
+
+    <!-- JavaScript -->
+
     <script src="script.js"></script>
+
 
 </body>
 
