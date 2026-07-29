@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-A Simple Blog Management System developed as part of the **CodeMax Full Stack Development Internship**. This project is built step by step using HTML, CSS, JavaScript, Node.js, Express.js, REST APIs, and Fetch API.
+A Simple Blog Management System developed as part of the **CodeMax Full Stack Development Internship**. This project is built step by step using HTML, CSS, JavaScript, Node.js, Express.js, REST APIs, Fetch API, Git, and GitHub Pages deployment.
 
 ---
 
@@ -112,17 +112,27 @@ A Simple Blog Management System developed as part of the **CodeMax Full Stack De
 
 ---
 
-# Day 11 - Animations & UI Enhancement
+## Day 11 - Animations & UI Enhancement
 
 - Added Smooth Scrolling
 - Added CSS Animations
 - Added Card Hover Effects
 - Added Button Hover Effects
 - Added Smooth Transitions
-- Added Image Hover Animation
 - Improved Navbar Hover Interaction
 - Enhanced Overall User Experience
-- Made Interface More Modern and Interactive
+- Built a Modern and Interactive User Interface
+
+---
+
+## Day 12 - Git & GitHub Pages Deployment
+
+- Used Git Commands for Version Control
+- Committed Project Changes
+- Pushed Source Code to GitHub Repository
+- Deployed Project using GitHub Pages
+- Verified Live Deployment Successfully
+- Improved Project Documentation
 
 ---
 
@@ -133,10 +143,11 @@ A Simple Blog Management System developed as part of the **CodeMax Full Stack De
 - JavaScript (ES6)
 - Node.js
 - Express.js
-- Fetch API
 - REST API
+- Fetch API
 - Git
 - GitHub
+- GitHub Pages
 
 ---
 
@@ -155,11 +166,13 @@ A Simple Blog Management System developed as part of the **CodeMax Full Stack De
 - Edit Blog
 - Delete Blog
 - Fetch API Integration
-- Dynamic Frontend and Backend Communication
+- Dynamic Frontend & Backend Communication
 - JSON Data Handling
 - Smooth Animations
 - Hover Effects
 - Smooth Scrolling
+- Git Version Control
+- GitHub Pages Deployment
 - Clean Project Structure
 
 ---
@@ -170,3 +183,122 @@ A Simple Blog Management System developed as part of the **CodeMax Full Stack De
 
 ```http
 GET /
+```
+
+Returns the Home Page.
+
+---
+
+## Get All Blogs
+
+```http
+GET /blogs
+```
+
+Returns all blog posts.
+
+---
+
+## Add Blog
+
+```http
+POST /add-blog
+```
+
+### Sample Request
+
+```json
+{
+  "title": "My First Blog",
+  "author": "Aliza",
+  "content": "Testing add blog API"
+}
+```
+
+---
+
+## Update Blog
+
+```http
+PUT /update-blog/:id
+```
+
+### Sample Request
+
+```json
+{
+  "title": "Updated Blog",
+  "author": "Aliza",
+  "content": "Updated blog content."
+}
+```
+
+---
+
+## Delete Blog
+
+```http
+DELETE /delete-blog/:id
+```
+
+### Example
+
+```http
+DELETE /delete-blog/1
+```
+
+---
+
+# Project Status
+
+✅ Day 1 Completed
+
+✅ Day 2 Completed
+
+✅ Day 3 Completed
+
+✅ Day 4 Completed
+
+✅ Day 5 Completed
+
+✅ Day 6 Completed
+
+✅ Day 7 Completed
+
+✅ Day 8 Completed
+
+✅ Day 9 Completed
+
+✅ Day 10 Completed
+
+✅ Day 11 Completed
+
+✅ Day 12 Completed
+
+---
+
+# Live Demo
+
+**GitHub Repository**
+
+https://github.com/alizawaseemaptech/CodeMax-FullStack-Internship
+
+**GitHub Pages**
+
+https://alizawaseemaptech.github.io/CodeMax-FullStack-Internship/
+
+---
+
+# Author
+
+**Aliza Waseem**
+
+Full Stack Web Developer
+
+**GitHub**
+
+https://github.com/alizawaseemaptech
+
+**LinkedIn**
+
+https://linkedin.com/in/alizawaseemwebdesigner20
