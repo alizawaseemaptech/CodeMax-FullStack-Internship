@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-A Simple Blog Management System developed as part of the **CodeMax Full Stack Development Internship**. This project is built step by step using HTML, CSS, JavaScript, Node.js, Express.js, REST APIs, Fetch API, Git, and GitHub Pages deployment.
+A Simple Blog Management System developed as part of the **CodeMax Full Stack Development Internship**. This project is built step by step using HTML, CSS, JavaScript, Node.js, Express.js, REST APIs, Fetch API, Git, and GitHub Pages deployment while following modern web development practices.
 
 ---
 
@@ -136,6 +136,20 @@ A Simple Blog Management System developed as part of the **CodeMax Full Stack De
 
 ---
 
+## Day 13 - Testing, Optimization & Code Cleanup
+
+- Tested Website Responsiveness
+- Fixed Minor UI Bugs
+- Optimized HTML Structure
+- Improved CSS Performance
+- Cleaned JavaScript Code
+- Removed Unnecessary Debug Code
+- Improved Mobile Responsiveness
+- Enhanced Overall User Experience
+- Optimized Overall Project Performance
+
+---
+
 # Technologies Used
 
 - HTML5
@@ -171,9 +185,11 @@ A Simple Blog Management System developed as part of the **CodeMax Full Stack De
 - Smooth Animations
 - Hover Effects
 - Smooth Scrolling
+- Responsive Design
+- Performance Optimization
+- Clean Code Structure
 - Git Version Control
 - GitHub Pages Deployment
-- Clean Project Structure
 
 ---
 
@@ -275,17 +291,51 @@ DELETE /delete-blog/1
 
 ✅ Day 12 Completed
 
+✅ Day 13 Completed
+
 ---
 
 # Live Demo
 
-**GitHub Repository**
+### GitHub Repository
 
 https://github.com/alizawaseemaptech/CodeMax-FullStack-Internship
 
-**GitHub Pages**
+### GitHub Pages
 
 https://alizawaseemaptech.github.io/CodeMax-FullStack-Internship/
+
+---
+
+# Folder Structure
+
+```
+CodeMax-FullStack-Internship/
+│
+├── Day-02-HTML/
+│   ├── index.html
+│   ├── add-blog.html
+│   ├── style.css
+│   ├── script.js
+│   ├── server.js
+│   ├── package.json
+│   └── README.md
+│
+└── README.md
+```
+
+---
+
+# Future Improvements
+
+- Database Integration (MongoDB)
+- User Authentication
+- Blog Search Feature
+- Categories & Tags
+- Image Upload Support
+- User Dashboard
+- Comment System
+- Like & Share Feature
 
 ---
 
@@ -293,12 +343,12 @@ https://alizawaseemaptech.github.io/CodeMax-FullStack-Internship/
 
 **Aliza Waseem**
 
-Full Stack Web Developer
+**Full Stack Web Developer**
 
-**GitHub**
+### GitHub
 
 https://github.com/alizawaseemaptech
 
-**LinkedIn**
+### LinkedIn
 
 https://linkedin.com/in/alizawaseemwebdesigner20
